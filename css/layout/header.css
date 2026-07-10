@@ -1,3 +1,55 @@
-p{
-    font-family: var(--font);
+body{
+    background-color: var(--cor-body);
+    color: #fff;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 50px;
+}
+
+.avatar{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatar img{
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.avatar a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 0;
+    font-weight: bolder;
+}
+
+.avatar a:hover{
+    color: var(--cor-alt);
+    transition: 0.30s;
+}
+
+.links{
+    display: flex;
+    gap: 16px;
+    font-size: 24px;
+    margin-top: 24px;
+}
+
+.links a{
+    text-decoration: none;
+    color: #fff;
+     font-weight: bolder;
+}
+
+.links a:hover{
+    color: var(--cor-alt);
+    transition: 0.30s;
 }

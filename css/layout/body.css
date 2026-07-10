@@ -1,0 +1,30 @@
+.prev{
+    margin: 64px;
+    gap: 36px;
+}
+
+.alt-h1{
+    color: var(--cor-alt);
+    margin: 24px 0px;
+    font-size: 52px;
+}
+
+.prev h1{
+        margin: 24px 0px;
+        font-size: 52px;
+}
+
+.prev a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 26px;
+}
+
+.prev a:hover{
+    color: var(--cor-alt);
+    transition: 0.30s;
+}
+
+.prev p {
+    font-size: 26px;
+}
