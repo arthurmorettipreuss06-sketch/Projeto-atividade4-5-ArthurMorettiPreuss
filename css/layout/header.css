@@ -1,55 +1,36 @@
-body{
-    background-color: var(--cor-body);
-    color: #fff;
-}
-
-header{
+header {
     display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 50px;
-}
-
-.avatar{
-    display: flex;
+    justify-content: center;
     align-items: center;
+    padding: 12px;
+    margin: 20px 0px 20px 0px;
     gap: 20px;
+    background-color: rgba(38, 40, 38, 0.8);
+    border-radius: 100px;
+    position: sticky;
+    z-index: 0;
 }
 
-.avatar img{
-    height: 60px;
-    width: 60px;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-.avatar a{
-    color: #fff;
-    text-decoration: none;
-    font-size: 24px;
-    margin: 0;
-    font-weight: bolder;
-}
-
-.avatar a:hover{
-    color: var(--cor-alt);
-    transition: 0.30s;
-}
-
-.links{
-    display: flex;
-    gap: 16px;
-    font-size: 24px;
-    margin-top: 24px;
-}
-
-.links a{
+header a {
     text-decoration: none;
     color: #fff;
-     font-weight: bolder;
+    padding: 8px 16px;
+    border-radius: 100px;
+    display: inline-block;
 }
 
-.links a:hover{
+header a:hover {
     color: var(--cor-alt);
-    transition: 0.30s;
+    background: rgba(255, 255, 255, 0.15);
+    transition: 0.5s;
+}
+
+header button{
+    background: var(--cor-alt);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: 0.5s;
 }

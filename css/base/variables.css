@@ -1,4 +1,4 @@
  :root{
-   --cor-body: #161616;
-   --cor-alt: #c85f72;
+   --cor-body: rgba(16, 16, 16, 1);
+   --cor-alt: rgba(200, 95, 114, 0.8);
 }
