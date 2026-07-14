@@ -1,7 +1,5 @@
-body{
-    background: var(--cor-body);
+body {
+    background: #323232;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Roboto', sans-serif;
 }

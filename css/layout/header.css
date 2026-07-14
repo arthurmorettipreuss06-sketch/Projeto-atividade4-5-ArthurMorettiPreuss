@@ -1,59 +1,109 @@
-header{
+header {
+    position: relative;
     display: flex;
-    justify-content: space-around;
-    gap: 900px;
-    position: sticky;
+    width: 100%;
+    padding: 16px 24px;
+    margin-bottom: 16px;
+    background-color: rgba(16, 16, 16, 0.8);
+    justify-content: center;
 }
 
 .header-bar {
     display: flex;
-    justify-content: space-between;
-    padding: 12px;
-    margin: 20px 0px 20px 0px;
-    gap: 20px;
-    background-color: rgba(38, 40, 38, 0.8);
-    border-radius: 100px;
-    position: sticky;
-    z-index: 0;
+    width: 100%;
+    max-width: 1200px;
+    gap: 16px;
+    padding: 12px 36px;
+    margin: 0px 0px 4px 0px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    text-weight: bolder;
 }
 
 .header-bar a {
     text-decoration: none;
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 100px;
-    display: inline-block;
+    color: white;
+    font-size: 18px;
+    margin: 0px 8px;
 }
 
-.header-bar a:hover {
-    color: var(--cor-alt);
-    background: rgba(255, 255, 255, 0.15);
-    transition: 0.5s;
+.menu-btn {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.header-title a{
+.menu-btn button {
     display: flex;
     align-items: center;
-    text-decoration: none;
-    color: #fff;
-    padding: 12px;
-}
-
-.header-btn button{
-    display: flex;
-    align-items: center;
-    padding: 12px;
-    margin: 20px 0px 20px 0px;
-    gap: 6px;
-    background-color: rgba(38, 40, 38, 0.8);
-    border-radius: 100px;
-    cursor: pointer;
+    gap: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
     border: none;
-    color: #fff;
+    color: white;
+    padding: 10px 14px;
+    cursor: pointer;
 }
 
-.header-btn button:hover{
-    color: var(--cor-alt);
-    background: rgba(255, 255, 255, 0.15);
-    transition: 0.5s;
+.menu-btn button img {
+    display: flex;
+    width: 18px;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+.menu-btn button:hover {
+    background-color: var(--cor-alt);
+    transition: background-color 0.3s;
+}
+
+.header-bar a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cor-alt), var(--cor-body));
+    transition: width .3s;
+}
+
+.header-bar a:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 760px) {
+    header {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 16px;
+    }
+
+    .header-bar {
+        gap: 12px;
+        padding: 12px 16px;
+        white-space: nowrap;
+        justify-content: center;
+    }
+
+    .header-bar a {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    .menu-btn {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin-top: 12px;
+    }
+
+    .menu-btn button {
+        padding: 8px 10px;
+        font-size: 14px;
+        gap: 6px;
+    }
 }
