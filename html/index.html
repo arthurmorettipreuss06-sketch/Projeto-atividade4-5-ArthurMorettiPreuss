@@ -4,31 +4,102 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/main.css" />
-    <script src="https://kit.fontawesome.com/9993d2bf36.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/9993d2bf36.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Portifólio</title>
   </head>
   <body>
-    <header>
-      <div class="header-bar">
-      <a href="#home" class="active">Início</a>
-      <a href="#about">Sobre</a>
-      <a href="#projects">Projetos</a>
-      <a href="#contact">Contato</a>
-    </div>
-    <div class="menu-btn">
-      <button>
-        <img src="../Assets/arrow-right-solid.png" alt="Menu" />
-        Saiba mais
-      </button>
-    </div>
+    <header class="cabecalho">
+      <div class="content-header">
+        <div class="header-name">
+          <h1>Arthur M. Preuss</h1>
+          <p>Desenvolvedor Full-Stack</p>
+        </div>
+        <div class="header-btns">
+          <a href="#sobre">Sobre</a>
+          <a href="#contato">Contato</a>
+          <label class="theme-switch">
+            <input type="checkbox" id="themeToggle" />
+            <span class="theme-switch__track">
+              <span class="theme-switch__thumb"></span>
+            </span>
+          </label>
+        </div>
+      </div>
     </header>
-    <main>
-      <div class="prev" id="about">
-      <img src="../Assets/avatar-charlie.png" alt="">
-      <h1>Arthur M. Preuss</h1>
-      <h2 class="alt-title">Desenvolvedor full-stack</h2>
-      <p>Eu sou um desenvolvedor full-stack que busca a primeira oportunidade para demonstrar minhas habilidades e contribuir para o sucesso da equipe.</p>
-    </div>
+    <main class="content">
+    <section class="hero container">
+      <p class="hero__eyebrow">
+        <span class="dot" aria-hidden="true"></span>
+        disponível para novos projetos
+      </p>
+      <h1 class="hero__title">Transformo interfaces em experiências que fazem sentido.</h1>
+      <p class="hero__subtitle">Sou Arthur M. Preuss, desenvolvedor full-stack júnior. Construo interfaces limpas, acessíveis e rápidas — do primeiro esboço ao deploy.</p>
+      <a href="#contato" class="btn btn--primary" id="ctaBtn">Saiba mais</a>
+    </section>
+    <section id="sobre" class="sobre container">
+      <div class="sobre__texto">
+        <h2>Sobre mim</h2>
+        <p>Comecei na programação por curiosidade e continuei por gostar de resolver problemas reais com código. Hoje trabalho com HTML, CSS e JavaScript, sempre buscando aprender mais sobre acessibilidade e boas práticas de interface.</p>
+        <p>Estou em busca da minha primeira oportunidade como desenvolvedora front-end, pronta para aprender com o time e contribuir desde o primeiro dia.</p>
+      </div>
+      <ul class="sobre__skills">
+        <li>HTML semântico</li>
+        <li>CSS puro / responsivo</li>
+        <li>JavaScript</li>
+        <li>Consumo de APIs</li>
+        <li>Git &amp; GitHub</li>
+        <li>Acessibilidade</li>
+      </ul>
+    </section>
+    <section id="contato" class="contato container">
+      <div class="contato__intro">
+        <h2>Vamos conversar</h2>
+        <p>Preencha o formulário abaixo. Se quiser, informe seu CEP para eu já saber de onde você é.</p>
+      </div>
+
+      <form class="form" id="contactForm" novalidate>
+        <div class="form__row">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+        </div>
+
+        <div class="form__row">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="voce@email.com" required>
+        </div>
+
+        <div class="form__row form__row--split">
+          <div class="form__field">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" placeholder="00000-000" inputmode="numeric" maxlength="9">
+          </div>
+          <div class="form__field form__field--wide">
+            <label for="endereco">Endereço</label>
+            <input type="text" id="endereco" name="endereco" placeholder="Preenchido automaticamente" readonly>
+          </div>
+        </div>
+        <p class="form__hint" id="cepStatus" aria-live="polite"></p>
+
+        <div class="form__row">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte um pouco sobre a ideia que quiser por em prática." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--accent">Enviar mensagem via WhatszApp</button>
+        <p class="form__feedback" id="formFeedback" aria-live="polite"></p>
+      </form>
+    </section>+
     </main>
+      <footer class="footer">
+    <div class="container-footer">
+      <p>&copy; <span id="ano"></span> Arthur M. Preuss. Feito com HTML, CSS e JavaScript puros.</p>
+    </div>
+  </footer>
+
+    
   </body>
+  <script src="../js/main.js"></script>
 </html>

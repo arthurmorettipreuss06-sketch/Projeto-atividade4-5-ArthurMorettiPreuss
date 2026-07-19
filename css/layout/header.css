@@ -1,109 +1,107 @@
-header {
-    position: relative;
-    display: flex;
+.cabecalho{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-bg);
     width: 100%;
-    padding: 16px 24px;
-    margin-bottom: 16px;
-    background-color: rgba(16, 16, 16, 0.8);
-    justify-content: center;
+    border-bottom: 1px solid var(--color-border);
+    backdrop-filter: blur(10px);
 }
 
-.header-bar {
+.content-header{
     display: flex;
-    width: 100%;
-    max-width: 1200px;
-    gap: 16px;
-    padding: 12px 36px;
-    margin: 0px 0px 4px 0px;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 0 24px; 
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.header-name{
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+}
+
+.header-name h1{
+    margin: 12px 12px 3px 12px;
+}
+
+.header-name p{
+    margin: 3px 12px 12px 12px;
+    color:  var( --color-primary);
+}
+
+.header-btns{
+    display: flex;
+    gap: 24px;
     align-items: center;
-    text-align: center;
-    box-sizing: border-box;
-    text-weight: bolder;
 }
 
-.header-bar a {
+.header-btns a{
     text-decoration: none;
-    color: white;
-    font-size: 18px;
-    margin: 0px 8px;
+    color: var(--color-text);
+    font-size: 20px;
+    padding-bottom: 4px;
+    position: relative;
 }
 
-.menu-btn {
-    position: absolute;
-    right: 24px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.menu-btn button {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px 14px;
-    cursor: pointer;
-}
-
-.menu-btn button img {
-    display: flex;
-    width: 18px;
-    height: auto;
-    filter: brightness(0) invert(1);
-}
-
-.menu-btn button:hover {
-    background-color: var(--cor-alt);
-    transition: background-color 0.3s;
-}
-
-.header-bar a::after {
+.header-btns a::after{
     content: '';
-    display: block;
-    width: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--cor-alt), var(--cor-body));
-    transition: width .3s;
+    width: 0;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    transition: width 0.3s ease;
 }
 
-.header-bar a:hover::after {
+.header-btns a:hover::after{
     width: 100%;
 }
 
-@media (max-width: 760px) {
-    header {
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 12px 16px;
-    }
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+  cursor: pointer;
+}
 
-    .header-bar {
-        gap: 12px;
-        padding: 12px 16px;
-        white-space: nowrap;
-        justify-content: center;
-    }
+.theme-switch input {
+  position: absolute;
+  opacity: 0;        /* esconde o checkbox padrão, mas ele continua funcional */
+  width: 0;
+  height: 0;
+}
 
-    .header-bar a {
-        font-size: 16px;
-        padding: 8px 12px;
-    }
+.theme-switch__track {
+  position: absolute;
+  inset: 0;
+  background: var(--color-surface);
+  border: 2px solid var(--color-accent);
+  border-radius: 999px;
+  transition: background 0.25s ease;
+}
 
-    .menu-btn {
-        position: relative;
-        right: auto;
-        top: auto;
-        transform: none;
-        margin-top: 12px;
-    }
+.theme-switch__thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background: var(--color-text);
+  border-radius: 50%;
+  transition: transform 0.25s ease;
+}
 
-    .menu-btn button {
-        padding: 8px 10px;
-        font-size: 14px;
-        gap: 6px;
-    }
+.theme-switch input:checked + .theme-switch__track {
+  background: var(--color-accent);
+  transition: smooth;
+}
+
+.theme-switch input:checked + .theme-switch__track .theme-switch__thumb {
+  transform: translateX(24px);
+  background: var(--color-bg);
 }
