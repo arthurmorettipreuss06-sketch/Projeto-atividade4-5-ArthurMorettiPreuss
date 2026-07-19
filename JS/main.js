@@ -22,6 +22,39 @@ themeToggle.addEventListener('change', () => {
 });
 
 
+const numeroWhatsApp = '555191569836'; 
+
+const contactForm = document.getElementById('contactForm');
+const formFeedback = document.getElementById('formFeedback');
+
+contactForm.addEventListener('submit', (evento) => {
+  evento.preventDefault();
+
+  const nome = document.getElementById('nome').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const cep = document.getElementById('cep').value.trim();
+  const endereco = document.getElementById('endereco').value.trim();
+  const mensagem = document.getElementById('mensagem').value.trim();
+
+  if (!nome || !email || !mensagem) {
+    formFeedback.textContent = 'Preencha nome, e-mail e mensagem antes de enviar.';
+    return;
+  }
+
+  let texto = `Olá! Vim pelo seu portfólio.\n\n`;
+  texto += `*Nome:* ${nome}\n`;
+  texto += `*E-mail:* ${email}\n`;
+  if (cep) texto += `*CEP:* ${cep}\n`;
+  if (endereco) texto += `*Endereço:* ${endereco}\n`;
+  texto += `\n*Mensagem:*\n${mensagem}`;
+
+  const textoCodificado = encodeURIComponent(texto);
+  const url = `https://wa.me/${numeroWhatsApp}?text=${textoCodificado}`;
+
+  formFeedback.textContent = 'Redirecionando para o WhatsApp...';
+  window.open(url, '_blank');
+});
+
 const cepInput = document.getElementById('cep');
 const enderecoInput = document.getElementById('endereco');
 const cepStatus = document.getElementById('cepStatus');

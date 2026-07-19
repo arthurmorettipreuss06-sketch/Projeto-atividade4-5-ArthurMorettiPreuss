@@ -1,8 +1,8 @@
-@import '/css/base/Globals.css';
+@import './base/Globals.css';
 
 @import './layout/header.css';
-@import './layout/body.css'; 
-@import './layout/footer.css'
+@import './layout/body.css';
+@import './layout/footer.css';
 
 
 
